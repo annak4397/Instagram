@@ -23,7 +23,7 @@
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         
-        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTimelineViewController"];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"MainTimelineNavigationController"];
     }
 }
 

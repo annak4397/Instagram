@@ -21,6 +21,7 @@
 		D0B23A9A24B3BEA3008A7DEB /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23A9924B3BEA3008A7DEB /* InstagramUITests.m */; };
 		D0B23AAA24B3D0D9008A7DEB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AA924B3D0D9008A7DEB /* LoginViewController.m */; };
 		D0B23AAD24B3D6B5008A7DEB /* MainTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AAC24B3D6B5008A7DEB /* MainTimelineViewController.m */; };
+		D0B23AB024B50C2C008A7DEB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		D0B23AA924B3D0D9008A7DEB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D0B23AAB24B3D6B5008A7DEB /* MainTimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTimelineViewController.h; sourceTree = "<group>"; };
 		D0B23AAC24B3D6B5008A7DEB /* MainTimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTimelineViewController.m; sourceTree = "<group>"; };
+		D0B23AAE24B50C2C008A7DEB /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		EE6BE0EB64294489E8C66FEA /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +194,8 @@
 				D0B23AA924B3D0D9008A7DEB /* LoginViewController.m */,
 				D0B23AAB24B3D6B5008A7DEB /* MainTimelineViewController.h */,
 				D0B23AAC24B3D6B5008A7DEB /* MainTimelineViewController.m */,
+				D0B23AAE24B50C2C008A7DEB /* ComposeViewController.h */,
+				D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				D0B23A7424B3BEA2008A7DEB /* AppDelegate.m in Sources */,
 				D0B23A8524B3BEA2008A7DEB /* main.m in Sources */,
 				D0B23A7724B3BEA2008A7DEB /* SceneDelegate.m in Sources */,
+				D0B23AB024B50C2C008A7DEB /* ComposeViewController.m in Sources */,
 				D0B23AAD24B3D6B5008A7DEB /* MainTimelineViewController.m in Sources */,
 				D0B23AAA24B3D0D9008A7DEB /* LoginViewController.m in Sources */,
 			);
