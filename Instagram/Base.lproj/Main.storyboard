@@ -60,11 +60,11 @@
         <!--Main Timeline View Controller-->
         <scene sceneID="HEJ-0K-4yl">
             <objects>
-                <viewController id="opl-vq-xFV" customClass="MainTimelineViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainTimelineViewController" id="opl-vq-xFV" customClass="MainTimelineViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PdJ-O4-kkp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="ITL-6p-m1S"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uyb-Xs-ubf">

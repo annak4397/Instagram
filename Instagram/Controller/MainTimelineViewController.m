@@ -35,7 +35,6 @@
 */
 
 - (IBAction)onLogoutTap:(id)sender {
-    NSLog(@"Tapped logout");
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
         if(error){
