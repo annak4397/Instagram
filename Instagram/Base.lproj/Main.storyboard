@@ -145,6 +145,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelButtonTap:" destination="R3Y-5Q-gkr" eventType="touchUpInside" id="yVC-Ic-ae2"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="6Jm-5i-owa">
@@ -152,10 +155,14 @@
                                 <rect key="frame" x="302" y="13" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Share"/>
+                                <connections>
+                                    <action selector="onShareButtonTap:" destination="R3Y-5Q-gkr" eventType="touchUpInside" id="Co5-n3-QyE"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionTextFiled" destination="teN-Ou-Mh8" id="yej-WC-oI5"/>
                         <outlet property="postImageView" destination="AKW-Tp-Isg" id="riB-6D-u6a"/>
                     </connections>
                 </viewController>
