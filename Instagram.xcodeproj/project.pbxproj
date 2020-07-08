@@ -23,6 +23,7 @@
 		D0B23AAD24B3D6B5008A7DEB /* MainTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AAC24B3D6B5008A7DEB /* MainTimelineViewController.m */; };
 		D0B23AB024B50C2C008A7DEB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */; };
 		D0B23AB424B51F5A008A7DEB /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AB324B51F5A008A7DEB /* Post.m */; };
+		D0B23AB824B52DD9008A7DEB /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AB724B52DD9008A7DEB /* PostCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		D0B23AB224B51F5A008A7DEB /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		D0B23AB324B51F5A008A7DEB /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		D0B23AB624B52DD9008A7DEB /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		D0B23AB724B52DD9008A7DEB /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		EE6BE0EB64294489E8C66FEA /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,6 +159,7 @@
 		D0B23A7124B3BEA2008A7DEB /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				D0B23AB524B52DB4008A7DEB /* View */,
 				D0B23AB124B51F31008A7DEB /* Model */,
 				D0B23AA724B3D0B5008A7DEB /* Controller */,
 				D0B23A7224B3BEA2008A7DEB /* AppDelegate.h */,
@@ -211,6 +215,15 @@
 				D0B23AB324B51F5A008A7DEB /* Post.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D0B23AB524B52DB4008A7DEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0B23AB624B52DD9008A7DEB /* PostCell.h */,
+				D0B23AB724B52DD9008A7DEB /* PostCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +469,7 @@
 				D0B23A8524B3BEA2008A7DEB /* main.m in Sources */,
 				D0B23A7724B3BEA2008A7DEB /* SceneDelegate.m in Sources */,
 				D0B23AB024B50C2C008A7DEB /* ComposeViewController.m in Sources */,
+				D0B23AB824B52DD9008A7DEB /* PostCell.m in Sources */,
 				D0B23AAD24B3D6B5008A7DEB /* MainTimelineViewController.m in Sources */,
 				D0B23AAA24B3D0D9008A7DEB /* LoginViewController.m in Sources */,
 				D0B23AB424B51F5A008A7DEB /* Post.m in Sources */,
