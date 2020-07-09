@@ -103,6 +103,7 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="XPV-Yo-0nH" id="zO8-MI-J7W"/>
                                             <outlet property="postImageView" destination="PHJ-R4-SUb" id="o0A-OO-vuR"/>
+                                            <segue destination="A9J-4c-0et" kind="show" identifier="detailSegue" id="fWt-NL-YZA"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -140,6 +141,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tkd-1v-ylq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1956.521739130435" y="79.6875"/>
+        </scene>
+        <!--Detail Post View Controller-->
+        <scene sceneID="ESR-kb-Oww">
+            <objects>
+                <viewController id="A9J-4c-0et" customClass="DetailPostViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rde-QT-vWp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tyl-OQ-CV6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pVe-rh-JGv" customClass="PFImageView">
+                                        <rect key="frame" x="0.0" y="-56" width="414" height="364"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="364" id="IpG-xh-eHJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6l-UY-F3l">
+                                        <rect key="frame" x="8" y="328" width="398" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6M-qs-eqD">
+                                        <rect key="frame" x="8" y="368" width="398" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="pVe-rh-JGv" firstAttribute="leading" secondItem="jkp-zo-44E" secondAttribute="leading" id="0yt-6e-Oln"/>
+                                    <constraint firstItem="jkp-zo-44E" firstAttribute="trailing" secondItem="p6M-qs-eqD" secondAttribute="trailing" constant="8" id="2GU-SV-kcy"/>
+                                    <constraint firstItem="p6M-qs-eqD" firstAttribute="leading" secondItem="jkp-zo-44E" secondAttribute="leading" constant="8" id="AY1-cD-0Na"/>
+                                    <constraint firstItem="O6l-UY-F3l" firstAttribute="leading" secondItem="jkp-zo-44E" secondAttribute="leading" constant="8" id="EYL-sA-iYK"/>
+                                    <constraint firstItem="p6M-qs-eqD" firstAttribute="top" secondItem="O6l-UY-F3l" secondAttribute="bottom" constant="10" id="XnW-jm-EDM"/>
+                                    <constraint firstItem="O6l-UY-F3l" firstAttribute="top" secondItem="pVe-rh-JGv" secondAttribute="bottom" constant="20" id="b6F-bS-sfl"/>
+                                    <constraint firstItem="pVe-rh-JGv" firstAttribute="trailing" secondItem="jkp-zo-44E" secondAttribute="trailing" id="frt-DF-9TE"/>
+                                    <constraint firstItem="jkp-zo-44E" firstAttribute="trailing" secondItem="O6l-UY-F3l" secondAttribute="trailing" constant="8" id="ghe-WH-2qu"/>
+                                    <constraint firstItem="pVe-rh-JGv" firstAttribute="top" secondItem="jkp-zo-44E" secondAttribute="top" id="iCb-aD-dhV"/>
+                                    <constraint firstItem="jkp-zo-44E" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="p6M-qs-eqD" secondAttribute="bottom" constant="20" id="u6W-Qb-HaW"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="vFm-mq-7GI"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="jkp-zo-44E"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="KrZ-fq-5k8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o2S-H1-B8U"/>
+                    <connections>
+                        <outlet property="captionLabel" destination="O6l-UY-F3l" id="OCp-Bp-jLI"/>
+                        <outlet property="dateLabel" destination="p6M-qs-eqD" id="kCb-LY-jz3"/>
+                        <outlet property="postImageView" destination="pVe-rh-JGv" id="f9v-2X-5SA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="awb-1f-yzl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2347.826086956522" y="819.64285714285711"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="pno-Rc-QJD">

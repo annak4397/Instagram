@@ -24,6 +24,7 @@
 		D0B23AB024B50C2C008A7DEB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */; };
 		D0B23AB424B51F5A008A7DEB /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AB324B51F5A008A7DEB /* Post.m */; };
 		D0B23AB824B52DD9008A7DEB /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AB724B52DD9008A7DEB /* PostCell.m */; };
+		D0B23ABD24B67F95008A7DEB /* DetailPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23ABC24B67F95008A7DEB /* DetailPostViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		D0B23AB324B51F5A008A7DEB /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		D0B23AB624B52DD9008A7DEB /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
 		D0B23AB724B52DD9008A7DEB /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		D0B23ABB24B67F95008A7DEB /* DetailPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailPostViewController.h; sourceTree = "<group>"; };
+		D0B23ABC24B67F95008A7DEB /* DetailPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailPostViewController.m; sourceTree = "<group>"; };
 		EE6BE0EB64294489E8C66FEA /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +207,8 @@
 				D0B23AAC24B3D6B5008A7DEB /* MainTimelineViewController.m */,
 				D0B23AAE24B50C2C008A7DEB /* ComposeViewController.h */,
 				D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */,
+				D0B23ABB24B67F95008A7DEB /* DetailPostViewController.h */,
+				D0B23ABC24B67F95008A7DEB /* DetailPostViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				D0B23A7A24B3BEA2008A7DEB /* ViewController.m in Sources */,
 				D0B23A7424B3BEA2008A7DEB /* AppDelegate.m in Sources */,
 				D0B23A8524B3BEA2008A7DEB /* main.m in Sources */,
+				D0B23ABD24B67F95008A7DEB /* DetailPostViewController.m in Sources */,
 				D0B23A7724B3BEA2008A7DEB /* SceneDelegate.m in Sources */,
 				D0B23AB024B50C2C008A7DEB /* ComposeViewController.m in Sources */,
 				D0B23AB824B52DD9008A7DEB /* PostCell.m in Sources */,

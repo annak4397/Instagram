@@ -8,6 +8,7 @@
 
 #import "Post.h"
 #import <Parse/Parse.h>
+#import <DateTools.h>
 
 @implementation Post
 
@@ -18,6 +19,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic createdAtString;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -32,14 +34,20 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
-    [newPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            // The object has been saved.
-        }
-        else {
-            NSLog(@"Saving post didn't work: %@", error.localizedDescription);
-        }
-    }];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    dateFormatter.timeStyle = NSDateFormatterMediumStyle;
+    
+    NSDate *date = [[NSDate alloc] init];
+     
+    // US English Locale (en_US)
+    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    //NSLog(@"%@", [dateFormatter stringFromDate:date]);
+    
+    newPost[@"createdAtString"] = [dateFormatter stringFromDate:date];
+    
+    [newPost saveInBackgroundWithBlock: completion];
+    
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {

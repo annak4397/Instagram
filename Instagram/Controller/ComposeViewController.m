@@ -52,14 +52,17 @@
 - (IBAction)onShareButtonTap:(id)sender {
     UIImage *postImage = [self resizeImage:self.postImageView.image withSize:CGSizeMake(300, 150)];
     [Post postUserImage:postImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if(error){
-            NSLog(@"Something went wrong with posting: %@", error.localizedDescription);
+        if(succeeded){
+            NSLog(@"Image is posted");
+            [self dismissViewControllerAnimated:YES completion:^{
+                [self.delegate didPost];
+            }];
         }
         else{
-            NSLog(@"Image is posted");
+            NSLog(@"Something went wrong with posting: %@", error.localizedDescription);
         }
     }];
-    [self dismissViewControllerAnimated:true completion:nil];
+    //[self.delegate didPost];
 }
 
 - (IBAction)onCancelButtonTap:(id)sender {

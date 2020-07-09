@@ -12,9 +12,10 @@
 #import <Parse/Parse.h>
 #import "ComposeViewController.h"
 #import "PostCell.h"
+#import "DetailPostViewController.h"
 
 
-@interface MainTimelineViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface MainTimelineViewController ()<UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *timelinePosts;
 - (IBAction)onLogoutTap:(id)sender;
@@ -31,8 +32,15 @@
     self.tableView.delegate = self;
     
     [self loadPosts];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 #pragma mark - Navigation
 
@@ -43,7 +51,16 @@
     if([[segue identifier] isEqualToString:@"composeSegue"]) {
         UINavigationController *navigationController = [segue destinationViewController];
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
     }
+    else if([[segue identifier] isEqualToString:@"detailSegue"]) {
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Post *tappedPost = self.timelinePosts[indexPath.row];
+        DetailPostViewController *detailController = [segue destinationViewController];
+        detailController.post = tappedPost;
+    }
+
 }
 
 -(void)loadPosts{
@@ -54,8 +71,9 @@
        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
            if (posts != nil) {
                // do something with the array of object returned by the call
-               self.timelinePosts = posts;
-               NSLog(@"%@", self.timelinePosts[0]);
+               NSArray* reversedArray = [[posts reverseObjectEnumerator] allObjects];
+               self.timelinePosts = reversedArray;
+               //NSLog(@"%@", self.timelinePosts[0]);
                [self.tableView reloadData];
            } else {
                NSLog(@"%@", error.localizedDescription);
@@ -88,18 +106,13 @@
 
     return cell;
 }
-/*
- -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
-     
-     Tweet *tweet = self.arrayOfTweets[indexPath.row];
-     cell.tweet = tweet;
-     [cell setCellTweet:tweet];
-     [cell refreshData];
-     cell.delegate = self;
-     
-     return cell;
- }
- */
+
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self loadPosts];
+    [refreshControl endRefreshing];
+}
+-(void)didPost{
+    [self loadPosts];
+}
 
 @end
