@@ -34,6 +34,8 @@
     [self.postImageView loadInBackground];
     
     self.captionLabel.text = postPassed[@"caption"];
+    self.dateLabel.text = postPassed[@"createdAtString"];
+    
 }
 
 @end

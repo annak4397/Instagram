@@ -90,11 +90,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="400" id="50l-5t-nLt" customClass="PostCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="400"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="404" id="50l-5t-nLt" customClass="PostCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="404"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="50l-5t-nLt" id="LnO-Hs-cCs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="404"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PHJ-R4-SUb" customClass="PFImageView">
@@ -104,7 +104,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPV-Yo-0nH">
-                                                    <rect key="frame" x="20" y="350" width="59.5" height="20.5"/>
+                                                    <rect key="frame" x="20" y="349.5" width="59.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -122,26 +122,35 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="creationTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPg-GV-81o">
+                                                    <rect key="frame" x="20" y="376" width="81" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="PHJ-R4-SUb" firstAttribute="top" secondItem="HMZ-0J-X4C" secondAttribute="bottom" constant="5" id="0mt-w9-xmR"/>
                                                 <constraint firstItem="c1h-41-WVA" firstAttribute="top" secondItem="LnO-Hs-cCs" secondAttribute="top" constant="5" id="3wt-dx-w59"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XPV-Yo-0nH" secondAttribute="trailing" constant="20" id="Dqk-Ro-4at"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="XPV-Yo-0nH" secondAttribute="bottom" constant="20" id="Ivi-bZ-RDw"/>
+                                                <constraint firstItem="qPg-GV-81o" firstAttribute="bottom" secondItem="LnO-Hs-cCs" secondAttribute="bottomMargin" id="HNr-rG-Qwn"/>
                                                 <constraint firstItem="XPV-Yo-0nH" firstAttribute="leading" secondItem="LnO-Hs-cCs" secondAttribute="leading" constant="20" id="Lxk-Wq-3gS"/>
                                                 <constraint firstItem="PHJ-R4-SUb" firstAttribute="top" secondItem="c1h-41-WVA" secondAttribute="bottom" constant="5" id="OnV-0C-x4r"/>
                                                 <constraint firstItem="c1h-41-WVA" firstAttribute="leading" secondItem="HMZ-0J-X4C" secondAttribute="trailing" constant="8" id="Os4-Jy-djX"/>
+                                                <constraint firstItem="qPg-GV-81o" firstAttribute="top" secondItem="XPV-Yo-0nH" secondAttribute="bottom" constant="6" id="Qjx-Xg-bEb"/>
                                                 <constraint firstItem="PHJ-R4-SUb" firstAttribute="leading" secondItem="LnO-Hs-cCs" secondAttribute="leading" id="RrZ-em-Tzh"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c1h-41-WVA" secondAttribute="trailing" constant="20" id="aud-gB-TMr"/>
-                                                <constraint firstItem="XPV-Yo-0nH" firstAttribute="top" secondItem="PHJ-R4-SUb" secondAttribute="bottom" constant="10" id="dd7-ZL-7Uq"/>
                                                 <constraint firstItem="HMZ-0J-X4C" firstAttribute="top" secondItem="LnO-Hs-cCs" secondAttribute="top" constant="5" id="euc-Rg-DxK"/>
                                                 <constraint firstItem="PHJ-R4-SUb" firstAttribute="top" secondItem="LnO-Hs-cCs" secondAttribute="top" constant="40" id="nnf-Qc-QaQ"/>
                                                 <constraint firstItem="HMZ-0J-X4C" firstAttribute="leading" secondItem="LnO-Hs-cCs" secondAttribute="leading" constant="10" id="rfF-9Y-vG7"/>
                                                 <constraint firstAttribute="right" secondItem="PHJ-R4-SUb" secondAttribute="right" id="rvp-XV-jRg"/>
+                                                <constraint firstItem="qPg-GV-81o" firstAttribute="leading" secondItem="LnO-Hs-cCs" secondAttribute="leading" constant="20" id="vax-KK-tpk"/>
+                                                <constraint firstItem="XPV-Yo-0nH" firstAttribute="top" secondItem="PHJ-R4-SUb" secondAttribute="bottom" constant="9.5" id="xbt-dE-402"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="captionLabel" destination="XPV-Yo-0nH" id="zO8-MI-J7W"/>
+                                            <outlet property="captionLabel" destination="XPV-Yo-0nH" id="tJc-iB-5O9"/>
+                                            <outlet property="dateLabel" destination="qPg-GV-81o" id="rK9-1a-BOm"/>
                                             <outlet property="postImageView" destination="PHJ-R4-SUb" id="o0A-OO-vuR"/>
                                             <outlet property="profileImageView" destination="HMZ-0J-X4C" id="Gg9-6f-mXw"/>
                                             <outlet property="usernameLabel" destination="c1h-41-WVA" id="hmB-AO-AH2"/>
