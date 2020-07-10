@@ -219,6 +219,7 @@
                                                 <size key="customSize" width="150" height="150"/>
                                                 <connections>
                                                     <outlet property="postImageView" destination="We3-jf-cNf" id="wju-4v-Tf6"/>
+                                                    <segue destination="A9J-4c-0et" kind="show" identifier="detailViewSegue" id="5gL-XW-uZ2"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -428,6 +429,9 @@
             <point key="canvasLocation" x="1098.5507246376812" y="1119.6428571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5gL-XW-uZ2"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
         <image name="image_placeholder" width="375" height="375"/>

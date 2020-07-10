@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "PostCollectionViewCell.h"
 #import "Post.h"
+#import "DetailPostViewController.h"
 
 @interface ProfileViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSArray *posts;
@@ -39,6 +40,9 @@
     
     self.profileImageView.file = PFUser.currentUser[@"profileImage"];
     [self.profileImageView loadInBackground];
+}
+-(void) viewDidAppear:(BOOL)animated{
+    [self getUserPosts];
 }
 -(void)getUserPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -69,15 +73,22 @@
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([[segue identifier] isEqualToString:@"detailViewSegue"]) {
+        UICollectionViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.postCollectionView indexPathForCell:tappedCell];
+        Post *tappedPost = self.posts[indexPath.row];
+        DetailPostViewController *detailController = [segue destinationViewController];
+        detailController.post = tappedPost;
+    }
 }
-*/
+
 
 - (IBAction)onEditButtonTap:(id)sender {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
