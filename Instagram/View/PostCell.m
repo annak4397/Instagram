@@ -23,8 +23,16 @@
 }
 -(void)setCellPost:(Post *)postPassed{
     self.post = postPassed;
+    PFUser *postUser = postPassed[@"author"];
+    if(postUser != nil){
+        NSLog(@"%@", postUser);
+        self.profileImageView.file = postUser[@"profileImage"];
+        [self.profileImageView loadInBackground];
+        self.usernameLabel.text = postUser[@"username"];
+    }
     self.postImageView.file = postPassed[@"image"];
     [self.postImageView loadInBackground];
+    
     self.captionLabel.text = postPassed[@"caption"];
 }
 

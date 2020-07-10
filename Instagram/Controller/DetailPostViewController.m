@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet PFImageView *postImageView;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
@@ -22,6 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFUser *postCreator = self.post[@"author"];
+    self.profileImageView.file = postCreator[@"profileImage"];
+    [self.postImageView loadInBackground];
+    self.usernameLabel.text = postCreator[@"username"];
+    
     self.postImageView.file = self.post[@"image"];
     [self.postImageView loadInBackground];
     self.captionLabel.text = self.post[@"caption"];
