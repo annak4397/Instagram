@@ -62,7 +62,6 @@
             NSLog(@"Something went wrong with posting: %@", error.localizedDescription);
         }
     }];
-    //[self.delegate didPost];
 }
 
 - (IBAction)onCancelButtonTap:(id)sender {

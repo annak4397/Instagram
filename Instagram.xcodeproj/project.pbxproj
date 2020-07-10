@@ -25,6 +25,9 @@
 		D0B23AB424B51F5A008A7DEB /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AB324B51F5A008A7DEB /* Post.m */; };
 		D0B23AB824B52DD9008A7DEB /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AB724B52DD9008A7DEB /* PostCell.m */; };
 		D0B23ABD24B67F95008A7DEB /* DetailPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23ABC24B67F95008A7DEB /* DetailPostViewController.m */; };
+		D0B23AC024B7AEE3008A7DEB /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23ABF24B7AEE3008A7DEB /* Constants.m */; };
+		D0B23AC324B7BA5D008A7DEB /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AC224B7BA5D008A7DEB /* ProfileViewController.m */; };
+		D0B23AC624B7BAE3008A7DEB /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B23AC524B7BAE3008A7DEB /* PostCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +86,12 @@
 		D0B23AB724B52DD9008A7DEB /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		D0B23ABB24B67F95008A7DEB /* DetailPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailPostViewController.h; sourceTree = "<group>"; };
 		D0B23ABC24B67F95008A7DEB /* DetailPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailPostViewController.m; sourceTree = "<group>"; };
+		D0B23ABE24B7AEE3008A7DEB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		D0B23ABF24B7AEE3008A7DEB /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		D0B23AC124B7BA5D008A7DEB /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		D0B23AC224B7BA5D008A7DEB /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		D0B23AC424B7BAE3008A7DEB /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
+		D0B23AC524B7BAE3008A7DEB /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		EE6BE0EB64294489E8C66FEA /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,6 +185,8 @@
 				D0B23A8024B3BEA2008A7DEB /* LaunchScreen.storyboard */,
 				D0B23A8324B3BEA2008A7DEB /* Info.plist */,
 				D0B23A8424B3BEA2008A7DEB /* main.m */,
+				D0B23ABE24B7AEE3008A7DEB /* Constants.h */,
+				D0B23ABF24B7AEE3008A7DEB /* Constants.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -209,6 +220,8 @@
 				D0B23AAF24B50C2C008A7DEB /* ComposeViewController.m */,
 				D0B23ABB24B67F95008A7DEB /* DetailPostViewController.h */,
 				D0B23ABC24B67F95008A7DEB /* DetailPostViewController.m */,
+				D0B23AC124B7BA5D008A7DEB /* ProfileViewController.h */,
+				D0B23AC224B7BA5D008A7DEB /* ProfileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +240,8 @@
 			children = (
 				D0B23AB624B52DD9008A7DEB /* PostCell.h */,
 				D0B23AB724B52DD9008A7DEB /* PostCell.m */,
+				D0B23AC424B7BAE3008A7DEB /* PostCollectionViewCell.h */,
+				D0B23AC524B7BAE3008A7DEB /* PostCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -469,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0B23AC024B7AEE3008A7DEB /* Constants.m in Sources */,
 				D0B23A7A24B3BEA2008A7DEB /* ViewController.m in Sources */,
 				D0B23A7424B3BEA2008A7DEB /* AppDelegate.m in Sources */,
 				D0B23A8524B3BEA2008A7DEB /* main.m in Sources */,
@@ -478,6 +494,8 @@
 				D0B23AB824B52DD9008A7DEB /* PostCell.m in Sources */,
 				D0B23AAD24B3D6B5008A7DEB /* MainTimelineViewController.m in Sources */,
 				D0B23AAA24B3D0D9008A7DEB /* LoginViewController.m in Sources */,
+				D0B23AC624B7BAE3008A7DEB /* PostCollectionViewCell.m in Sources */,
+				D0B23AC324B7BA5D008A7DEB /* ProfileViewController.m in Sources */,
 				D0B23AB424B51F5A008A7DEB /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

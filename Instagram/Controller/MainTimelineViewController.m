@@ -13,6 +13,7 @@
 #import "ComposeViewController.h"
 #import "PostCell.h"
 #import "DetailPostViewController.h"
+#import "Constants.h"
 
 
 @interface MainTimelineViewController ()<UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
@@ -65,15 +66,13 @@
 
 -(void)loadPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-       query.limit = 20;
-
+    [query orderByDescending:@"createdAt"];
+    query.limit = POST_QUERY_LIMIT;
+    
        // fetch data asynchronously
        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
            if (posts != nil) {
-               // do something with the array of object returned by the call
-               NSArray* reversedArray = [[posts reverseObjectEnumerator] allObjects];
-               self.timelinePosts = reversedArray;
-               //NSLog(@"%@", self.timelinePosts[0]);
+               self.timelinePosts = posts;
                [self.tableView reloadData];
            } else {
                NSLog(@"%@", error.localizedDescription);
