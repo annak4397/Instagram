@@ -12,10 +12,12 @@
 #import "PostCollectionViewCell.h"
 #import "Post.h"
 
-@interface ProfileViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface ProfileViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *postFlowLayout;
+- (IBAction)onEditButtonTap:(id)sender;
 
 @end
 
@@ -34,6 +36,9 @@
     self.postFlowLayout.itemSize = CGSizeMake(cellWidth, cellHeight);
     self.postFlowLayout.minimumLineSpacing = 0;
     self.postFlowLayout.minimumInteritemSpacing = 0;
+    
+    self.profileImageView.file = PFUser.currentUser[@"profileImage"];
+    [self.profileImageView loadInBackground];
 }
 -(void)getUserPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -73,5 +78,66 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)onEditButtonTap:(id)sender {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    UIImage *profileImage = [self resizeImage:originalImage withSize:CGSizeMake(300, 150)];
+
+    // Do something with the images (based on your use case)
+    [self.profileImageView setImage:profileImage];
+    //newPost.image = [self getPFFileFromImage:image];
+    PFUser *current = [PFUser currentUser];
+    current[@"profileImage"] = [Post getPFFileFromImage:profileImage];
+    [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded){
+            NSLog(@"saved");
+        }
+        else{
+            NSLog(@"didn't save: %@", error.localizedDescription);
+        }
+    }];
+    
+    /*PFUser.currentUser[@"profileImage"] = [Post getPFFileFromImage:originalImage];
+    [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(error){
+            NSLog(@"Unable to update user picture: %@", error.localizedDescription);
+        }
+    }];*/
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
 
 @end

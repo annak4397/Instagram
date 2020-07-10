@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uVJ-u9-7Tv" customClass="PFImageView">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="uVJ-u9-7Tv" customClass="PFImageView">
                                         <rect key="frame" x="8" y="8" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -182,6 +182,9 @@
                                         <rect key="frame" x="57" y="144" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="onEditButtonTap:" destination="rIi-WQ-Bb0" eventType="touchUpInside" id="7Rv-gf-vhN"/>
+                                        </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="B1M-aG-1Cm">
                                         <rect key="frame" x="0.0" y="196" width="414" height="590"/>
@@ -232,6 +235,7 @@
                     <connections>
                         <outlet property="postCollectionView" destination="B1M-aG-1Cm" id="akW-ps-4my"/>
                         <outlet property="postFlowLayout" destination="vNo-VO-iDq" id="R7x-0a-lV0"/>
+                        <outlet property="profileImageView" destination="uVJ-u9-7Tv" id="IUu-AG-cuy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ji-u1-VDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
