@@ -19,6 +19,7 @@
 @interface MainTimelineViewController ()<UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *timelinePosts;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadingActivity;
 - (IBAction)onLogoutTap:(id)sender;
 @end
 
@@ -32,6 +33,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    [self.loadingActivity startAnimating];
     [self loadPosts];
     
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -73,6 +75,7 @@
        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
            if (posts != nil) {
                self.timelinePosts = posts;
+               [self.loadingActivity stopAnimating];
                [self.tableView reloadData];
            } else {
                NSLog(@"%@", error.localizedDescription);
