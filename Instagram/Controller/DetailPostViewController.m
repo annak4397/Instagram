@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2;
     // Do any additional setup after loading the view.
     PFUser *postCreator = self.post[@"author"];
     self.profileImageView.file = postCreator[@"profileImage"];

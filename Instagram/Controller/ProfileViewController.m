@@ -47,6 +47,7 @@
 -(void)getUserPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
     //PFUser.currentUser.objectId;
     [query whereKey:@"author" equalTo:PFUser.currentUser];
     query.limit = POST_QUERY_LIMIT;
@@ -111,7 +112,7 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    UIImage *profileImage = [self resizeImage:originalImage withSize:CGSizeMake(300, 150)];
+    UIImage *profileImage = [self resizeImage:originalImage withSize:CGSizeMake(414, 414)];
 
     // Do something with the images (based on your use case)
     [self.profileImageView setImage:profileImage];

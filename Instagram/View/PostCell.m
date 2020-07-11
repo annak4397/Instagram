@@ -24,6 +24,8 @@
 -(void)setCellPost:(Post *)postPassed{
     self.post = postPassed;
     PFUser *postUser = postPassed[@"author"];
+    
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2;
     if(postUser != nil){
         NSLog(@"%@", postUser);
         self.profileImageView.file = postUser[@"profileImage"];

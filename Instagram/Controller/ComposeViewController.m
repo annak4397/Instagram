@@ -50,7 +50,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)onShareButtonTap:(id)sender {
-    UIImage *postImage = [self resizeImage:self.postImageView.image withSize:CGSizeMake(300, 150)];
+    UIImage *postImage = [self resizeImage:self.postImageView.image withSize:CGSizeMake(414, 414)];
     [Post postUserImage:postImage withCaption:self.captionTextView.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if(succeeded){
             NSLog(@"Image is posted");
