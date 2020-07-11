@@ -27,7 +27,6 @@
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height / 2;
     if(postUser != nil){
-        NSLog(@"%@", postUser);
         self.profileImageView.file = postUser[@"profileImage"];
         [self.profileImageView loadInBackground];
         self.usernameLabel.text = postUser[@"username"];

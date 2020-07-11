@@ -16,6 +16,7 @@
 @interface ProfileViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *postFlowLayout;
 - (IBAction)onEditButtonTap:(id)sender;
@@ -40,6 +41,7 @@
     
     self.profileImageView.file = PFUser.currentUser[@"profileImage"];
     [self.profileImageView loadInBackground];
+    self.usernameLabel.text = PFUser.currentUser[@"username"];
 }
 -(void) viewDidAppear:(BOOL)animated{
     [self getUserPosts];
