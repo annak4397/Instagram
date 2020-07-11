@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.captionTextView.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -98,5 +99,9 @@
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    self.captionTextView.text = @"";
+    self.captionTextView.textColor = [UIColor blackColor];
 }
 @end
